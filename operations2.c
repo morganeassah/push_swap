@@ -12,6 +12,21 @@
 
 #include "push_swap.h"
 
+void	swap_two(t_stack **stack)
+{
+	t_stack	*first;
+	t_stack	*second;
+
+	first = *stack;
+	second = first->next;
+	first->next = first;
+	first->prev = second;
+	second->next = first;
+	second->prev = first;
+	*stack = second;
+	write (1, "sa/n", 1);
+}
+
 void	ft_rra_rrb(t_stack **stack, int ab)
 {
 	if (!stack || !*stack || (*stack)->next == *stack)

@@ -77,23 +77,3 @@ void	lstdel(t_stack **stack, t_stack *todel)
 		*stack = todel->next;
 	free(todel);
 }
-
-void	free_all(t_stack **a)
-{
-	t_stack	*current;
-	t_stack	*next;
-	t_stack	*start;
-
-	if (!a || !*a)
-		return ;
-	start = *a;
-	current = start->next;
-	while (current != start)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	free(start);
-	*a = NULL;
-}

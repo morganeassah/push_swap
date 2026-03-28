@@ -30,6 +30,7 @@ typedef struct s_stack
 
 void	ft_error(void);
 void	free_tab(char **tab);
+void	free_all(t_stack **a);
 void	free_exit(char **tmp, t_stack **a);
 void	addfirst(t_stack **a, int nbr, int index);
 void	addlast(t_stack **a, int nbr);
@@ -38,6 +39,7 @@ void	free_all(t_stack **a);
 void	check_double(int ac, char **av);
 void	sa_sb_rra_rrb(t_stack **stack);
 void	ft_sa_sb(t_stack **stack, int ab);
+void	swap_two(t_stack **a);
 void	ft_ss(t_stack **a, t_stack **b);
 void	ft_ra_rb(t_stack **stack, int ab);
 void	ft_rr(t_stack **a, t_stack **b);
@@ -50,6 +52,7 @@ void	put_index(t_stack *stack, int *tab);
 void	ft_swap(int *tab, int i, int j);
 void	ft_sort_three(t_stack **stack);
 void	sort_2(t_stack **a, t_stack **b);
+void	ft_sort_two(t_stack **a);
 void	ft_sort_big(t_stack **a, t_stack **b);
 void	do_rotations(t_stack **a, t_stack **b, int index);
 void	end_b(t_stack **b, int index);

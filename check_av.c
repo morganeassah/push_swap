@@ -20,7 +20,7 @@ void	ft_error(void)
 
 int	ft_atoi2(const char *str, int *error)
 {
-	int				sign;
+	long long int				sign;
 	long long int	i;
 
 	sign = 1;
@@ -40,6 +40,8 @@ int	ft_atoi2(const char *str, int *error)
 		if (!ft_isdigit(*str))
 			return (*error = 1, 0);
 		i = i * 10 + (*str - '0');
+		if (i > 2147483648LL)
+			return (*error = 1, 0);
 		str++;
 	}
 	if ((sign * i) > 2147483647 || (sign * i) < -2147483648)

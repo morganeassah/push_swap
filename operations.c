@@ -21,6 +21,8 @@ void	ft_sa_sb(t_stack **stack, int ab)
 
 	if (!stack || !*stack || (*stack)->next == *stack)
 		return ;
+	if (lstsize(*stack) == 2)
+		swap_two(stack);
 	first = *stack;
 	second = first->next;
 	third = second->next;

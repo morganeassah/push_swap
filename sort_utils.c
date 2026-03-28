@@ -12,9 +12,10 @@
 
 #include "push_swap.h"
 
-int	*alloc_tab(int size, int *tab, t_stack *stack)
+int	*alloc_tab(int size, t_stack *stack)
 {
 	int	i;
+	int *tab;
 
 	i = 0;
 	tab = malloc(sizeof(int) * size);
@@ -68,7 +69,11 @@ int	*ft_bubble_sort(t_stack *stack)
 
 	size = lstsize(stack);
 	tab = NULL;
-	tab = alloc_tab(size, tab, stack);
+	tab = alloc_tab(size, stack);
+	if (!tab)
+	{
+		return (NULL);
+	}
 	i = 0;
 	while (i < size)
 	{

@@ -42,7 +42,8 @@ void	ft_sort_big(t_stack **a, t_stack **b)
 	if (is_sorted(*a))
 	{
 		free_all(a);
-		exit (1);
+		free(tab);
+		exit(1);
 	}
 	while (lstsize(*a) > 3)
 	{
@@ -52,7 +53,6 @@ void	ft_sort_big(t_stack **a, t_stack **b)
 	sort_2(a, b);
 	min = ft_is_min(*a);
 	end_a(a, min);
-	free_all(a);
 	free(tab);
 }
 
@@ -64,6 +64,12 @@ void	ft_sort_three(t_stack **a)
 
 	if (!a || !*a || (*a)->next == *a)
 		return ;
+	if (lstsize(*a) == 2)
+	{
+		if ((*a)->nbr > (*a)->next->nbr)
+			ft_sa_sb(a, 0);
+		return ;
+	}
 	first = (*a)->nbr;
 	second = (*a)->next->nbr;
 	last = (*a)->prev->nbr;
@@ -82,15 +88,4 @@ void	ft_sort_three(t_stack **a)
 		ft_sa_sb(a, 0);
 	else if (last < first && first < second)
 		ft_rra_rrb(a, 0);
-}
-
-void	end_a(t_stack **a, int target)
-{
-	while ((*a)->index != target)
-	{
-		if (ft_pos(*a, target) > lstsize(*a) / 2)
-			ft_rra_rrb(a, 0);
-		else
-			ft_ra_rb(a, 0);
-	}
 }

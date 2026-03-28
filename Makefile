@@ -6,7 +6,9 @@ CFLAGS = -Wall -Wextra -Werror -g3
 
 LIBFTDIR = libft
 
-SRCS = push_swap.c \
+SRCS = main.c \
+	free.c \
+	end.c \
 	lst_utils.c \
 	check_av.c \
 	lst_utils2.c \
@@ -16,7 +18,7 @@ SRCS = push_swap.c \
 	operations2.c \
 	sort_utils.c \
 	cheapest_move.c
-	
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

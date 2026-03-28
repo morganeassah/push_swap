@@ -98,11 +98,3 @@ void	do_rotations(t_stack **a, t_stack **b, int index)
 	while ((*b)->index != index)
 		end_b(b, index);
 }
-
-void	end_b(t_stack **b, int index)
-{
-	if (ft_pos(*b, index) <= lstsize(*b) / 2)
-		ft_ra_rb(b, 1);
-	else
-		ft_rra_rrb(b, 1);
-}

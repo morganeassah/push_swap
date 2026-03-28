@@ -35,7 +35,6 @@ void	ft_sort(t_stack **a, t_stack **b)
 	if (lstsize((*a)) <= 3)
 	{
 		ft_sort_three(a);
-		free_all(a);
 		return ;
 	}
 	else
@@ -47,8 +46,12 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
+	if (ac < 2)
+		exit (1);
 	a = fill_stack(ac, av);
 	b = NULL;
 	ft_sort(&a, &b);
+	free_all(&a);
+	free_all(&b);
 	return (0);
 }

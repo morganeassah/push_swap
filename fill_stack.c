@@ -12,26 +12,6 @@
 
 #include "push_swap.h"
 
-void	free_exit(char **tmp, t_stack **a)
-{
-	free_tab(tmp);
-	free(tmp);
-	free_all(a);
-	ft_error();
-}
-
-void	free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-}
-
 t_stack	*fill_stack(int ac, char **av)
 {
 	int		i;
@@ -40,9 +20,7 @@ t_stack	*fill_stack(int ac, char **av)
 
 	a = NULL;
 	error = 0;
-	if (ac < 2)
-		exit (1);
-	else if (ac == 2)
+	if (ac == 2)
 		a = fill_stack2(av);
 	else
 	{
@@ -76,7 +54,7 @@ t_stack	*fill_stack2(char **av)
 	{
 		val = ft_atoi2(tmp[i], &error);
 		if (error)
-			free_exit(tmp + i, &a);
+			free_exit(tmp, &a);
 		addlast(&a, val);
 		free(tmp[i]);
 		i++;
