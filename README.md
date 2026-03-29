@@ -1,6 +1,6 @@
-            This project has been created as part of the 42 curriculum by <massah>.
+*This project has been created as part of the 42 curriculum by <massah>.*
 
-Description:
+**Description:**
 
     Push_swap est un projet algorithmique du cursus 42.
 
@@ -43,7 +43,7 @@ Gestion des ensembles moyens et grands (100+ éléments)
 
 
 
-Instructions:
+**Instructions:**
 
 Compilation
 
@@ -117,7 +117,7 @@ ARG=$(shuf -i 0-499 -n 500 | tr '\n' ' '); valgrind --leak-check=full --show-lea
 
 
 
-Ressources:
+**Ressources:**
 
 Références
 
@@ -135,13 +135,8 @@ Utilisation de l’IA:
 
 Des outils d’intelligence artificielle ont été utilisés pour :
 
-1) Comprendre et corriger certaines boucles infinies
-
-2) Optimiser la logique des rotations combinées (rr / rrr)
-
-3) Vérifier la cohérence algorithmique
-
-4) Améliorer la clarté de la documentation
+1) Identifier certaines boucles infinies
+2) Effectuer une relecture du code
 
 Toutes les décisions algorithmiques, l’implémentation, les tests et la validation finale ont été réalisés manuellement.
 
