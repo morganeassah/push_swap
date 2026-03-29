@@ -18,23 +18,28 @@ void	ft_error(void)
 	exit(1);
 }
 
+int	get_sign(const char **str)
+{
+	if (**str == '-')
+	{
+		(*str)++;
+		return (-1);
+	}
+	if (**str == '+')
+		(*str)++;
+	return (1);
+}
+
 int	ft_atoi2(const char *str, int *error)
 {
 	long long int				sign;
-	long long int	i;
+	long long int				i;
 
-	sign = 1;
 	i = 0;
 	while (*str == ' ' || (*str == '\t' || *str == '\n'
 			|| *str == '\f' || *str == '\v' || *str == '\r'))
 		str++;
-	if (*str == '-')
-	{
-		sign = -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
+	sign = get_sign(&str);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))

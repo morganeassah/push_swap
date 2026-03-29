@@ -1,0 +1,1 @@
+output "ssa" au lieu de sa pour int max, int min

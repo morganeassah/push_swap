@@ -24,7 +24,6 @@ void	swap_two(t_stack **stack)
 	second->next = first;
 	second->prev = first;
 	*stack = second;
-	write (1, "sa/n", 1);
 }
 
 void	ft_rra_rrb(t_stack **stack, int ab)

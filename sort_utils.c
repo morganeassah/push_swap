@@ -15,7 +15,7 @@
 int	*alloc_tab(int size, t_stack *stack)
 {
 	int	i;
-	int *tab;
+	int	*tab;
 
 	i = 0;
 	tab = malloc(sizeof(int) * size);
@@ -45,7 +45,7 @@ int	ft_is_min(t_stack *a)
 	{
 		tmp = tmp->next;
 		if (min > tmp->index)
-		min = tmp->index;
+			min = tmp->index;
 		i++;
 	}
 	return (min);

@@ -67,6 +67,7 @@ int		cost(t_stack *stack, int index);
 int		lstsize(t_stack *a);
 int		ft_pos(t_stack *a, int index);
 int		ft_atoi2(const char *str, int *error);
+int		get_sign(const char **str);
 int		ft_is_min(t_stack *a);
 
 t_stack	*fill_stack(int ac, char **av);

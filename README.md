@@ -105,13 +105,11 @@ Commandes pour utiliser le checker:
 
 1) Pour tester 100 nombres:
 
-ARG=$(shuf -i 0-99 -n 100 | tr '\n' ' ')
-./push_swap $ARG | ../checker_linux $ARG
+ARG=$(shuf -i 0-99 -n 100 | tr '\n' ' '); valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap $ARG | ../checker_linux $ARG
 
 2) Pour tester avec 500 nombres:
 
-ARG=$(shuf -i 0-499 -n 500 | tr '\n' ' ')
-./push_swap $ARG | ../checker_linux $ARG
+ARG=$(shuf -i 0-499 -n 500 | tr '\n' ' '); valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap $ARG | ../checker_linux $ARG
 
 3) Pour compter les opérations on ajoute:
 
